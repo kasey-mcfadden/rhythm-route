@@ -1,7 +1,7 @@
 {
   "name": "rhythm-route",
   "version": "1.0.0",
-  "homepage": "http://rhythm.kaseym.com",
+  "homepage": "https://rhythm.kaseym.com",
   "description": "An app that integrates with Strava and Spotify to display media listened to during activities",
   "private": true,
   "dependencies": {
