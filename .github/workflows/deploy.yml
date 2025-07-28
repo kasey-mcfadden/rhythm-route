@@ -36,7 +36,7 @@ jobs:
         echo "REACT_APP_SPOTIFY_CLIENT_ID=${{ secrets.REACT_APP_SPOTIFY_CLIENT_ID }}" >> .env
         echo "REACT_APP_SPOTIFY_CLIENT_SECRET=${{ secrets.REACT_APP_SPOTIFY_CLIENT_SECRET }}" >> .env
         echo "REACT_APP_REDIRECT_URI=https://kaseym.com/rhythm-route/#/auth/callback" >> .env
-        echo "REACT_APP_SPOTIFY_REDIRECT_URI=https://kaseym.com/rhythm-route/#/auth/spotify/callback" >> .env
+        echo "REACT_APP_SPOTIFY_REDIRECT_URI=https://kaseym.com/rhythm-route/auth/spotify/callback" >> .env
         
     - name: Build
       run: npm run build
@@ -45,4 +45,5 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build 
+        publish_dir: ./build
+        publish_branch: master 
