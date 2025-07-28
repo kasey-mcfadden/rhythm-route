@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { StravaActivity, SpotifyTrack, AuthState } from './types';
 import stravaService from './services/stravaService';
 import spotifyService from './services/spotifyService';
