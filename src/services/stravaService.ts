@@ -3,7 +3,7 @@ import { StravaActivity } from '../types';
 
 const STRAVA_CLIENT_ID = process.env.REACT_APP_STRAVA_CLIENT_ID;
 const STRAVA_CLIENT_SECRET = process.env.REACT_APP_STRAVA_CLIENT_SECRET;
-const REDIRECT_URI = process.env.REACT_APP_REDIRECT_URI || 'http://localhost:3000/auth/callback';
+const REDIRECT_URI = process.env.REACT_APP_REDIRECT_URI || 'https://kaseym.com/rhythm-route/#/auth/callback';
 
 class StravaService {
   private baseURL = 'https://www.strava.com/api/v3';
