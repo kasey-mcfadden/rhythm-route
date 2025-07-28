@@ -1,8 +1,9 @@
-name: Build and Deploy
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [ master ]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -30,8 +31,8 @@ jobs:
           echo "REACT_APP_STRAVA_CLIENT_SECRET=${{ secrets.REACT_APP_STRAVA_CLIENT_SECRET }}" >> .env
           echo "REACT_APP_SPOTIFY_CLIENT_ID=${{ secrets.REACT_APP_SPOTIFY_CLIENT_ID }}" >> .env
           echo "REACT_APP_SPOTIFY_CLIENT_SECRET=${{ secrets.REACT_APP_SPOTIFY_CLIENT_SECRET }}" >> .env
-                  echo "REACT_APP_REDIRECT_URI=https://kaseym.com/rhythm-route/#/auth/callback" >> .env
-        echo "REACT_APP_SPOTIFY_REDIRECT_URI=https://kaseym.com/rhythm-route/#/auth/spotify/callback" >> .env
+          echo "REACT_APP_REDIRECT_URI=https://kaseym.com/rhythm-route/#/auth/callback" >> .env
+          echo "REACT_APP_SPOTIFY_REDIRECT_URI=https://kaseym.com/rhythm-route/#/auth/spotify/callback" >> .env
           
       - name: Build
         run: npm run build
@@ -50,6 +51,9 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
+    permissions:
+      pages: write
+      id-token: write
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
