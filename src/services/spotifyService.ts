@@ -3,7 +3,7 @@ import { SpotifyTrack } from '../types';
 
 const SPOTIFY_CLIENT_ID = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
 const SPOTIFY_CLIENT_SECRET = process.env.REACT_APP_SPOTIFY_CLIENT_SECRET;
-const REDIRECT_URI = process.env.REACT_APP_SPOTIFY_REDIRECT_URI || 'https://kaseym.com/rhythm-route/auth/spotify/callback';
+const REDIRECT_URI = process.env.REACT_APP_SPOTIFY_REDIRECT_URI || 'https://kaseym.com/rhythm-route/#/auth/spotify/callback';
 
 class SpotifyService {
   private baseURL = 'https://api.spotify.com/v1';
